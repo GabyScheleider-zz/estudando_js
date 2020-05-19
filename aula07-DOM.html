@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Manipulando a DOM</title>
+    <style>
+        body{
+            background-color: rgb(243, 208, 11);
+            color: black;
+            font: normal 18pt Arial;
+        }
+    </style>
+</head>
+<body>
+    <h1 class="titulo">Iniciando os estudos DOM</h1>
+    <p>Aqui vai o resultado</p>
+    <p>Aprendendo a usar o <strong>DOM</strong> em JavaScript. </p>
+    <div name="msg">Clique em mim</div>
+    <div id="msg">Clique em mim 2</div>
+
+    <script>
+        window.document.write(window.navigator.appName) //Acesar a DOM
+
+        /* Selecionando elemntos */
+        var p1 = window.document.getElementsByTagName('p')[1] //pegar elemento por marca Ex: div
+        window.document.write('Esta escrito assim:' + p1.innerText)
+        window.document.write('Esta escrito assim:' + p1.innerHTML)
+
+        var titulo = window.document.getElementsByTagName('h1')[0]
+        titulo.style.color = '#00f'
+
+        window.document.getElementsByTagName('p')[1].style.color = '#00f' //Um exemplo dirento, sem usar variavel
+
+        var exp2 = window.document.getElementById('msg')
+        document.write(exp2)//pega o objeto
+        document.write(exp2.innerHTML)
+        exp2.style.backgroundColor = 'blue'
+        exp2.style.color = 'white'
+        exp2.innerText = 'Sou um novo valor'
+
+        var d = window.document.getElementsByName('msg')[0]
+        d.style.color = '#8b23fa'
+
+        var x = window.document.getElementsByClassName('titulo')[0]
+        x.innerText = 'Mudei o título'
+
+        var y = window.document.querySelector('div#msg')
+        y.style.color = 'red'
+    </script>
+</body>
+</html>
